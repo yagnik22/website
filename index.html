@@ -1,3 +1,4 @@
+<!-- website -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
   *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
   body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;}
   nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(13,42,31,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
-  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--gold);text-decoration:none;}
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;letter-spacing:0.05em;color:var(--gold);text-decoration:none;}
   .nav-links{display:flex;gap:2rem;list-style:none;}
   .nav-links a{color:var(--text-muted);text-decoration:none;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.3s;}
   .nav-links a:hover{color:var(--gold);}
@@ -18,27 +19,30 @@
   .nav-cta:hover{background:var(--gold);color:var(--navy);}
   .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:8rem 4rem 4rem;position:relative;overflow:hidden;}
   .hero::before{content:'';position:absolute;top:0;right:0;bottom:0;width:50%;background:var(--navy-mid);z-index:0;}
+  .hero::after{content:'';position:absolute;top:20%;left:10%;width:400px;height:400px;background:radial-gradient(circle,rgba(240,236,224,0.04) 0%,transparent 70%);z-index:0;}
   .hero-text{position:relative;z-index:1;padding-right:4rem;}
   .hero-tag{display:inline-block;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);border:1px solid var(--border);padding:0.4rem 1rem;margin-bottom:2rem;}
   .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,4.2rem);font-weight:300;line-height:1.1;margin-bottom:0.5rem;}
   .hero h1 span{color:var(--gold);font-style:italic;}
-  .hero-subtitle{font-size:0.9rem;color:var(--text-muted);margin-bottom:2rem;}
+  .hero-subtitle{font-size:0.9rem;color:var(--text-muted);letter-spacing:0.05em;margin-bottom:2rem;}
   .hero-desc{font-size:1rem;color:#c8d8c0;line-height:1.8;max-width:480px;margin-bottom:2.5rem;}
   .hero-stats{display:flex;gap:2.5rem;margin-bottom:2.5rem;}
   .stat-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:var(--gold);display:block;line-height:1;}
   .stat-label{font-size:0.72rem;color:var(--text-muted);letter-spacing:0.08em;text-transform:uppercase;}
   .hero-btns{display:flex;gap:1rem;}
-  .btn-primary{background:var(--cream);color:var(--navy);padding:0.85rem 2rem;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;}
-  .btn-outline{border:1px solid var(--border);color:var(--cream);padding:0.85rem 2rem;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;}
+  .btn-primary{background:var(--cream);color:var(--navy);padding:0.85rem 2rem;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:all 0.3s;}
+  .btn-primary:hover{background:#fff;}
+  .btn-outline{border:1px solid var(--border);color:var(--cream);padding:0.85rem 2rem;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;}
+  .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
   .hero-image-col{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 2rem;}
   .hero-card{background:var(--navy);border:1px solid var(--border);padding:2.5rem;width:100%;max-width:380px;position:relative;}
   .hero-card::before{content:'';position:absolute;top:-1px;left:2rem;right:2rem;height:3px;background:var(--cream);}
-  .ecg-line{width:100%;height:60px;margin-bottom:1.5rem;}
+  .ecg-line{width:100%;height:60px;margin-bottom:1.5rem;overflow:hidden;}
   .card-name{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;margin-bottom:0.3rem;}
-  .card-title{font-size:0.8rem;color:var(--text-muted);margin-bottom:1.5rem;}
+  .card-title{font-size:0.8rem;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:1.5rem;}
   .card-info{display:flex;flex-direction:column;gap:0.8rem;}
   .card-info-item{display:flex;align-items:center;gap:0.8rem;}
-  .card-info-item .icon{width:32px;height:32px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .card-info-item .icon{width:32px;height:32px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.9rem;}
   .card-info-item span{font-size:0.82rem;color:var(--text-muted);}
   .card-info-item strong{display:block;font-size:0.88rem;color:var(--white);font-weight:400;}
   section{padding:6rem 4rem;}
@@ -50,26 +54,32 @@
   .about-text p{color:#c8d8c0;line-height:1.9;font-size:0.95rem;margin-bottom:1.2rem;}
   .timeline{display:flex;flex-direction:column;}
   .timeline-item{display:grid;grid-template-columns:100px 1fr;gap:1.5rem;padding:1.5rem 0;border-bottom:1px solid var(--border);}
-  .timeline-year{font-family:'Cormorant Garamond',serif;font-size:0.85rem;color:var(--gold);font-weight:600;}
+  .timeline-item:last-child{border-bottom:none;}
+  .timeline-year{font-family:'Cormorant Garamond',serif;font-size:0.85rem;color:var(--gold);font-weight:600;padding-top:0.2rem;}
   .timeline-content h4{font-size:0.9rem;font-weight:500;margin-bottom:0.3rem;}
   .timeline-content p{font-size:0.8rem;color:var(--text-muted);}
   .expertise{background:var(--navy);}
   .expertise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border);}
-  .expertise-card{background:var(--navy-mid);padding:2.5rem;}
+  .expertise-card{background:var(--navy-mid);padding:2.5rem;transition:all 0.3s;position:relative;overflow:hidden;}
+  .expertise-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--cream);transform:scaleX(0);transition:transform 0.3s;}
+  .expertise-card:hover{background:var(--navy-light);}
+  .expertise-card:hover::after{transform:scaleX(1);}
   .exp-icon{font-size:1.8rem;margin-bottom:1.2rem;}
   .exp-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;margin-bottom:0.8rem;}
   .exp-desc{font-size:0.82rem;color:var(--text-muted);line-height:1.7;}
   .publications{background:var(--navy-mid);}
   .pub-list{display:flex;flex-direction:column;}
-  .pub-item{display:grid;grid-template-columns:60px 1fr;gap:1.5rem;padding:1.8rem 0;border-bottom:1px solid var(--border);}
+  .pub-item{display:grid;grid-template-columns:60px 1fr;gap:1.5rem;padding:1.8rem 0;border-bottom:1px solid var(--border);align-items:start;transition:all 0.3s;}
   .pub-item:first-child{border-top:1px solid var(--border);}
+  .pub-item:hover{padding-left:0.5rem;}
   .pub-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--border);line-height:1;}
   .pub-content h4{font-size:0.92rem;font-weight:500;margin-bottom:0.4rem;line-height:1.5;}
   .pub-journal{font-size:0.78rem;color:var(--text-muted);font-style:italic;}
   .pub-type{display:inline-block;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:rgba(240,236,224,0.08);border:1px solid var(--border);color:var(--cream);padding:0.2rem 0.6rem;margin-bottom:0.5rem;}
   .awards{background:var(--navy);}
   .awards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
-  .award-card{border:1px solid var(--border);padding:2rem;position:relative;}
+  .award-card{border:1px solid var(--border);padding:2rem;position:relative;transition:all 0.3s;}
+  .award-card:hover{border-color:var(--gold);}
   .award-year{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:rgba(240,236,224,0.07);position:absolute;top:1rem;right:1.5rem;}
   .award-icon{font-size:1.4rem;margin-bottom:1rem;}
   .award-title{font-size:0.92rem;font-weight:500;margin-bottom:0.5rem;}
@@ -78,7 +88,8 @@
   .faq-list{display:flex;flex-direction:column;max-width:800px;}
   .faq-item{border-bottom:1px solid var(--border);}
   .faq-q{font-size:0.92rem;font-weight:500;padding:1.4rem 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:1rem;}
-  .faq-q .toggle{color:var(--gold);font-size:1.2rem;flex-shrink:0;}
+  .faq-q .toggle{color:var(--gold);font-size:1.2rem;flex-shrink:0;transition:transform 0.3s;}
+  .faq-q.open .toggle{transform:rotate(45deg);}
   .faq-a{font-size:0.85rem;color:var(--text-muted);line-height:1.7;padding-bottom:1.4rem;display:none;}
   .faq-a.open{display:block;}
   .contact{background:var(--navy);}
@@ -89,13 +100,16 @@
   .contact-label{font-size:0.72rem;color:var(--text-muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.3rem;}
   .contact-value{font-size:0.92rem;}
   .contact-value a{color:var(--white);text-decoration:none;}
+  .contact-value a:hover{color:var(--gold);}
   .contact-form{display:flex;flex-direction:column;gap:1rem;}
   .form-group{display:flex;flex-direction:column;gap:0.4rem;}
   .form-group label{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);}
-  .form-group input,.form-group textarea,.form-group select{background:var(--navy-mid);border:1px solid var(--border);color:var(--white);padding:0.8rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;}
+  .form-group input,.form-group textarea,.form-group select{background:var(--navy-mid);border:1px solid var(--border);color:var(--white);padding:0.8rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;transition:border 0.3s;appearance:none;}
+  .form-group input:focus,.form-group textarea:focus{border-color:var(--gold);}
   .form-group textarea{resize:none;height:100px;}
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-  .submit-btn{background:var(--cream);color:var(--navy);border:none;padding:1rem 2rem;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;margin-top:0.5rem;}
+  .submit-btn{background:var(--cream);color:var(--navy);border:none;padding:1rem 2rem;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;transition:all 0.3s;margin-top:0.5rem;}
+  .submit-btn:hover{background:#fff;}
   footer{background:var(--navy-mid);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);}
   .footer-name{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);}
   .footer-copy{font-size:0.75rem;color:var(--text-muted);}
@@ -106,7 +120,8 @@
   @media(max-width:900px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}.hero{grid-template-columns:1fr;padding:7rem 1.5rem 3rem;}.hero::before{display:none;}.hero-text{padding-right:0;}section{padding:4rem 1.5rem;}.about-grid,.awards-grid,.contact-grid{grid-template-columns:1fr;}.expertise-grid{grid-template-columns:1fr;background:none;gap:1rem;}footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.5rem;}}
 </style>
 </head>
-<body><nav>
+<body>
+<nav>
   <a class="nav-logo" href="#">Dr. Y.M. Kumble</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
@@ -122,7 +137,7 @@
   <div class="hero-text">
     <div class="hero-tag">Cardiac Electrophysiologist</div>
     <h1>Dr. Yajnik<br/><span>Mukund Kumble</span></h1>
-    <p class="hero-subtitle">DrNB Cardiology | Fellowship — Fuwai Hospital, Beijing | FHRS</p>
+    <p class="hero-subtitle">DrNB Cardiology &nbsp;|&nbsp; Fellowship — Fuwai Hospital, Beijing &nbsp;|&nbsp; FHRS</p>
     <p class="hero-desc">Subspecialty-trained cardiac electrophysiologist with expertise in complex arrhythmia ablation, conduction system pacing, and device therapy. Practising at Holy Family Hospital, Mumbai &amp; Omega Hospital, Mangalore.</p>
     <div class="hero-stats">
       <div><span class="stat-num">6+</span><span class="stat-label">Years EP Practice</span></div>
@@ -138,7 +153,7 @@
     <div class="hero-card">
       <div class="ecg-line">
         <svg viewBox="0 0 380 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path class="ecg-path" d="M0 35 L40 35 L55 10 L60 50 L65 5 L72 55 L78 35 L120 35 L135 25 L140 35 L180 35 L195 10 L200 50 L205 5 L212 55 L218 35 L260 35 L275 25 L280 35 L320 35 L335 10 L340 50 L345 5 L352 55 L358 35 L380 35" stroke="#f0ece0" stroke-width="1.5" fill="none"/>
+          <path class="ecg-path" d="M0 35 L40 35 L50 35 L55 10 L60 50 L65 5 L72 55 L78 35 L120 35 L130 35 L135 25 L140 35 L180 35 L190 35 L195 10 L200 50 L205 5 L212 55 L218 35 L260 35 L270 35 L275 25 L280 35 L320 35 L330 35 L335 10 L340 50 L345 5 L352 55 L358 35 L380 35" stroke="#f0ece0" stroke-width="1.5" fill="none"/>
         </svg>
       </div>
       <div class="card-name">Dr. Yajnik Kumble</div>
@@ -146,41 +161,94 @@
       <div class="card-info">
         <div class="card-info-item"><div class="icon">🏥</div><div><strong>Holy Family Hospital &amp; Research Centre</strong><span>Bandra West, Mumbai — Mon &amp; Fri, 4–6 PM</span></div></div>
         <div class="card-info-item"><div class="icon">🏥</div><div><strong>Mangalore Heartscan Foundation</strong><span>Bendoor, Mangalore</span></div></div>
-        <div class="card-info-item"><div class="icon">📞</div><div><strong>9​​​​​​​​​​​​​​​​
+        <div class="card-info-item"><div class="icon">🎓</div><div><strong>Fuwai Hospital, Beijing</strong><span>Advanced EP Fellowship</span></div></div>
+        <div class="card-info-item"><div class="icon">📞</div><div><strong>9845383138 / 9321100499</strong><span>yagnik22@gmail.com</span></div></div>
+      </div>
+    </div>
+  </div>
+</section><section class="about" id="about">
+  <div class="reveal">
+    <div class="section-label">Background</div>
+    <h2 class="section-title">Trained at the <em>highest level</em><br/>of electrophysiology</h2>
+  </div>
+  <div class="about-grid reveal">
+    <div class="about-text">
+      <p>Dr. Yajnik Mukund Kumble is a consultant cardiac electrophysiologist practising at Holy Family Hospital and Research Centre, Mumbai, and Mangalore Heartscan Foundation, Mangalore. He completed his DrNB Cardiology at Holy Family Hospital, followed by fellowship training in cardiac electrophysiology, and subsequently an advanced fellowship in EP at the prestigious Fuwai Hospital in Beijing — one of Asia's foremost cardiovascular centres.</p>
+      <p>His clinical interests span the full spectrum of cardiac arrhythmia management: complex radiofrequency catheter ablation, permanent pacemaker implantation, ICD therapy, cardiac resynchronisation therapy (CRT), conduction system pacing, and management of channelopathies and sudden cardiac death.</p>
+      <p>Dr. Kumble has a strong academic track record with peer-reviewed publications in PACE-Wiley and the Indian Pacing and Electrophysiology Journal, and presentations at major international conferences including APHRS, IHRSCON, and Summa.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item"><div class="timeline-year">2024</div><div class="timeline-content"><h4>Advanced EP Fellowship</h4><p>Fuwai Hospital, Beijing, China</p></div></div>
+      <div class="timeline-item"><div class="timeline-year">2023</div><div class="timeline-content"><h4>EP Fellowship</h4><p>Holy Family Hospital, Mumbai</p></div></div>
+      <div class="timeline-item"><div class="timeline-year">2022</div><div class="timeline-content"><h4>DrNB Cardiology</h4><p>Holy Family Hospital, Mumbai</p></div></div>
+      <div class="timeline-item"><div class="timeline-year">2014</div><div class="timeline-content"><h4>MD General Medicine</h4><p>Fr. Muller Medical College, Mangalore</p></div></div>
+      <div class="timeline-item"><div class="timeline-year">2008</div><div class="timeline-content"><h4>MBBS</h4><p>Fr. Muller Medical College, Mangalore</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="expertise" id="expertise">
+  <div class="reveal">
+    <div class="section-label">Clinical Expertise</div>
+    <h2 class="section-title">Procedures &amp; <em>Specialisations</em></h2>
+  </div>
+  <div class="expertise-grid reveal">
+    <div class="expertise-card"><div class="exp-icon">⚡</div><div class="exp-title">Complex RF Catheter Ablation</div><p class="exp-desc">High-fidelity radiofrequency ablation for complex arrhythmia substrates using 3D electroanatomic mapping (CARTO/EnSite). Includes irrigated-tip catheters, contact force guidance, and power-controlled lesion delivery for durable transmural lesion sets.</p></div>
+    <div class="expertise-card"><div class="exp-icon">🫀</div><div class="exp-title">SVT &amp; VT Ablation</div><p class="exp-desc">Ablation of AVNRT (typical and atypical), AVRT, accessory pathways, outflow tract VT, idiopathic VT, and substrate-based scar-related VT in ischaemic and non-ischaemic cardiomyopathy.</p></div>
+    <div class="expertise-card"><div class="exp-icon">📡</div><div class="exp-title">Atrial Fibrillation Ablation</div><p class="exp-desc">Pulmonary vein isolation and beyond — posterior wall isolation, CFAE ablation, and ablation of persistent and long-standing persistent AF using point-by-point RF and cryoballoon strategies.</p></div>
+    <div class="expertise-card"><div class="exp-icon">🔋</div><div class="exp-title">Permanent Pacemaker Implantation</div><p class="exp-desc">Single- and dual-chamber pacemaker implantation for sinus node dysfunction, high-degree AV block, and chronotropic incompetence. Includes device programming optimisation and long-term follow-up surveillance.</p></div>
+    <div class="expertise-card"><div class="exp-icon">🛡️</div><div class="exp-title">Implantable Cardioverter Defibrillator</div><p class="exp-desc">Primary and secondary prevention ICD implantation — single-coil, dual-coil, and subcutaneous ICD (S-ICD). Specialised in VT zone programming, ATP optimisation, and reduction of inappropriate shocks.</p></div>
+    <div class="expertise-card"><div class="exp-icon">🔄</div><div class="exp-title">Cardiac Resynchronisation Therapy</div><p class="exp-desc">CRT-P and CRT-D implantation for heart failure with reduced ejection fraction and LBBB. Expertise in complex coronary sinus lead positioning and AV/VV delay programming.</p></div>
+    <div class="expertise-card"><div class="exp-icon">🔌</div><div class="exp-title">Conduction System Pacing</div><p class="exp-desc">His-bundle pacing and left bundle branch area pacing (LBBAP) as physiological alternatives to conventional RV pacing — offering superior haemodynamic outcomes.</p></div>
+    <div class="expertise-card"><div class="exp-icon">🧬</div><div class="exp-title">Channelopathies &amp; Inherited Arrhythmias</div><p class="exp-desc">Risk stratification and management of Brugada syndrome, long QT syndrome, CPVT, and Ebstein anomaly-related arrhythmias including complex accessory pathway anatomy.</p></div>
+    <div class="expertise-card"><div class="exp-icon">🗺️</div><div class="exp-title">3D Electroanatomic Mapping</div><p class="exp-desc">Advanced electroanatomic mapping for substrate characterisation, scar delineation, and tachycardia circuit identification — enabling precise, anatomy-guided ablation.</p></div>
+  </div>
+</section>
 <section class="publications" id="publications">
-  <div class="reveal"><div class="section-label">Academic Output</div><h2 class="section-title">Publications &amp; <em>Presentations</em></h2></div>
+  <div class="reveal">
+    <div class="section-label">Academic Output</div>
+    <h2 class="section-title">Publications &amp; <em>Presentations</em></h2>
+  </div>
   <div class="pub-list reveal">
     <div class="pub-item"><div class="pub-num">01</div><div class="pub-content"><div class="pub-type">Journal Article</div><h4>A double tachycardia — two swords do not fit in one scabbard</h4><p class="pub-journal">PACE Wiley — Pacing and Clinical Electrophysiology, 2023</p></div></div>
-    <div class="pub-item"><div class="pub-num">02</div><div class="pub-content"><div class="pub-type">Journal Article</div><h4>Clinical profile and electrophysiological characteristics of atypical AVNRT: A decade's experience</h4><p class="pub-journal">Indian Pacing and Electrophysiology Journal, 2023</p></div></div>
-    <div class="pub-item"><div class="pub-num">03</div><div class="pub-content"><div class="pub-type">Conference Presentation</div><h4>Morphological abnormality and accessory pathway characteristics in Ebstein anomaly</h4><p class="pub-journal">Free Paper — APHRS Conference 2022, Singapore</p></div></div>
-    <div class="pub-item"><div class="pub-num">04</div><div class="pub-content"><div class="pub-type">Abstract &amp; Publication</div><h4>Arrhythmia and electrophysiological characteristics in Ebstein anomaly</h4><p class="pub-journal">Indian Pacing and Electrophysiology Journal, 2022</p></div></div>
+    <div class="pub-item"><div class="pub-num">02</div><div class="pub-content"><div class="pub-type">Journal Article</div><h4>Clinical profile and electrophysiological characteristics of atypical atrioventricular nodal reentrant tachycardia: A decade's experience</h4><p class="pub-journal">Indian Pacing and Electrophysiology Journal, 2023</p></div></div>
+    <div class="pub-item"><div class="pub-num">03</div><div class="pub-content"><div class="pub-type">Conference Presentation</div><h4>Is there a correlation between severity of morphological abnormality and accessory pathway characteristics in Ebstein anomaly?</h4><p class="pub-journal">Free Paper — APHRS Conference 2022, Singapore Chapter</p></div></div>
+    <div class="pub-item"><div class="pub-num">04</div><div class="pub-content"><div class="pub-type">Abstract &amp; Publication</div><h4>Study of arrhythmia and electrophysiological characteristics in relation to echocardiographic severity in Ebstein anomaly</h4><p class="pub-journal">Indian Pacing and Electrophysiology Journal, 2022 &amp; Digital IHRS 2021</p></div></div>
     <div class="pub-item"><div class="pub-num">05</div><div class="pub-content"><div class="pub-type">Conference Presentation</div><h4>Mayhem via Mahaim</h4><p class="pub-journal">Free Paper — Summa 2023, Delhi</p></div></div>
     <div class="pub-item"><div class="pub-num">06</div><div class="pub-content"><div class="pub-type">Conference Presentation</div><h4>Atrial tachycardia with syncope</h4><p class="pub-journal">Free Paper — ICAS 2023</p></div></div>
     <div class="pub-item"><div class="pub-num">07</div><div class="pub-content"><div class="pub-type">Conference Presentation</div><h4>Outflow tract ventricular tachycardia</h4><p class="pub-journal">EP Fellows Summit 2023</p></div></div>
     <div class="pub-item"><div class="pub-num">08</div><div class="pub-content"><div class="pub-type">Conference Presentation</div><h4>Two routes of entry into coronary sinus during CRT implant</h4><p class="pub-journal">IHRSCON 2023</p></div></div>
   </div>
-</section>
-<section class="awards" id="awards">
-  <div class="reveal"><div class="section-label">Recognition</div><h2 class="section-title">Awards &amp; <em>Achievements</em></h2></div>
+</section><section class="awards" id="awards">
+  <div class="reveal">
+    <div class="section-label">Recognition</div>
+    <h2 class="section-title">Awards &amp; <em>Achievements</em></h2>
+  </div>
   <div class="awards-grid reveal">
-    <div class="award-card"><div class="award-year">2023</div><div class="award-icon">🏆</div><div class="award-title">Best Paper — Summa 2023, Delhi</div><p class="award-desc">Free paper on Mahaim-mediated tachycardia at the national EP conference.</p></div>
-    <div class="award-card"><div class="award-year">2023</div><div class="award-icon">📄</div><div class="award-title">Publication — PACE Wiley</div><p class="award-desc">Peer-reviewed publication on double tachycardia in Pacing and Clinical Electrophysiology.</p></div>
+    <div class="award-card"><div class="award-year">2023</div><div class="award-icon">🏆</div><div class="award-title">Best Paper — Summa 2023, Delhi</div><p class="award-desc">Free paper presentation on Mahaim-mediated tachycardia at the national EP conference.</p></div>
+    <div class="award-card"><div class="award-year">2023</div><div class="award-icon">📄</div><div class="award-title">Publication — PACE Wiley</div><p class="award-desc">Peer-reviewed publication on double tachycardia in Pacing and Clinical Electrophysiology (Wiley).</p></div>
     <div class="award-card"><div class="award-year">2023</div><div class="award-icon">📄</div><div class="award-title">Publication — IPEJ</div><p class="award-desc">Published decade-long experience on atypical AVNRT in the Indian Pacing and Electrophysiology Journal.</p></div>
     <div class="award-card"><div class="award-year">2022</div><div class="award-icon">🌏</div><div class="award-title">International Presentation — APHRS 2022</div><p class="award-desc">Free paper on Ebstein anomaly presented at the Asia Pacific Heart Rhythm Society, Singapore.</p></div>
   </div>
 </section>
 <section class="faq" id="faq">
-  <div class="reveal"><div class="section-label">Patient Information</div><h2 class="section-title">Frequently Asked <em>Questions</em></h2></div>
+  <div class="reveal">
+    <div class="section-label">Patient Information</div>
+    <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+  </div>
   <div class="faq-list reveal">
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What conditions does Dr. Kumble treat? <span class="toggle">+</span></div><div class="faq-a">Dr. Kumble treats the full spectrum of heart rhythm disorders including atrial fibrillation, SVT, ventricular tachycardia, heart block, and inherited conditions such as Brugada syndrome and long QT syndrome.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is a cardiac electrophysiologist? <span class="toggle">+</span></div><div class="faq-a">A cardiac electrophysiologist is a cardiologist with additional subspecialty training in the electrical system of the heart, diagnosing and treating arrhythmias using catheter ablation and implantable devices.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is catheter ablation and is it safe? <span class="toggle">+</span></div><div class="faq-a">Catheter ablation is a minimally invasive procedure to eliminate the source of an abnormal rhythm. It is well-established with high success rates and a strong safety profile.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Where can I consult Dr. Kumble? <span class="toggle">+</span></div><div class="faq-a">Dr. Kumble consults at Holy Family Hospital, Bandra West, Mumbai (Monday &amp; Friday, 4–6 PM) and Mangalore Heartscan Foundation, Bendoor, Mangalore. Call 9845383138 or 9321100499.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I need a referral? <span class="toggle">+</span></div><div class="faq-a">A referral is not strictly required. You are welcome to contact the hospital directly to schedule a consultation.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What conditions does Dr. Kumble treat? <span class="toggle">+</span></div><div class="faq-a">Dr. Kumble treats the full spectrum of heart rhythm disorders including atrial fibrillation, SVT, ventricular tachycardia, heart block, and inherited conditions such as Brugada syndrome and long QT syndrome. He also manages patients requiring pacemakers, ICDs, and cardiac resynchronisation devices.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is a cardiac electrophysiologist? <span class="toggle">+</span></div><div class="faq-a">A cardiac electrophysiologist is a cardiologist with additional subspecialty training in the electrical system of the heart. EPs diagnose and treat arrhythmias using catheter ablation, implantable devices, and electrophysiology studies.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is catheter ablation and is it safe? <span class="toggle">+</span></div><div class="faq-a">Catheter ablation is a minimally invasive procedure where thin flexible wires are guided to the heart to identify and eliminate the source of an abnormal rhythm. It is well-established with high success rates and a strong safety profile.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Where can I consult Dr. Kumble? <span class="toggle">+</span></div><div class="faq-a">Dr. Kumble consults at Holy Family Hospital and Research Centre, Bandra West, Mumbai (Monday &amp; Friday, 4–6 PM) and at Mangalore Heartscan Foundation, Bendoor, Mangalore. Please call 9845383138 or 9321100499 to book an appointment.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I need a referral to see Dr. Kumble? <span class="toggle">+</span></div><div class="faq-a">A referral is not strictly required. You are welcome to contact the hospital directly to schedule a consultation.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What should I bring to my first consultation? <span class="toggle">+</span></div><div class="faq-a">Please bring any previous ECGs, Holter monitor reports, echocardiograms, and a list of your current medications. If you have had prior cardiac procedures or device implants, bring the relevant reports and device ID cards.</div></div>
   </div>
 </section>
 <section class="contact" id="contact">
-  <div class="reveal"><div class="section-label">Get in Touch</div><h2 class="section-title">Book a <em>Consultation</em></h2></div>
+  <div class="reveal">
+    <div class="section-label">Get in Touch</div>
+    <h2 class="section-title">Book a <em>Consultation</em></h2>
+  </div>
   <div class="contact-grid reveal">
     <div class="contact-info">
       <div class="contact-item"><div class="contact-icon">🏥</div><div><div class="contact-label">Mumbai</div><div class="contact-value">Holy Family Hospital &amp; Research Centre<br/>Bandra West, Mumbai<br/>Monday &amp; Friday, 4–6 PM</div></div></div>
