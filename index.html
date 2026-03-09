@@ -105,11 +105,15 @@
   .form-group{display:flex;flex-direction:column;gap:0.4rem;}
   .form-group label{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);}
   .form-group input,.form-group textarea,.form-group select{background:var(--navy-mid);border:1px solid var(--border);color:var(--white);padding:0.8rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;transition:border 0.3s;appearance:none;}
-  .form-group input:focus,.form-group textarea:focus{border-color:var(--gold);}
+  .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--gold);}
   .form-group textarea{resize:none;height:100px;}
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
   .submit-btn{background:var(--cream);color:var(--navy);border:none;padding:1rem 2rem;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;transition:all 0.3s;margin-top:0.5rem;}
   .submit-btn:hover{background:#fff;}
+  .submit-btn:disabled{opacity:0.6;cursor:not-allowed;}
+  .form-status{display:none;padding:0.9rem 1.2rem;font-size:0.82rem;letter-spacing:0.04em;border:1px solid;margin-top:0.5rem;}
+  .form-status.success{display:block;border-color:rgba(168,196,176,0.5);color:#a8c4b0;background:rgba(168,196,176,0.08);}
+  .form-status.error{display:block;border-color:rgba(220,100,100,0.4);color:#e8a0a0;background:rgba(220,100,100,0.06);}
   footer{background:var(--navy-mid);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);}
   .footer-name{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);}
   .footer-copy{font-size:0.75rem;color:var(--text-muted);}
@@ -138,7 +142,7 @@
     <div class="hero-tag">Cardiac Electrophysiologist</div>
     <h1>Dr. Yajnik<br/><span>Mukund Kumble</span></h1>
     <p class="hero-subtitle">DrNB Cardiology &nbsp;|&nbsp; Fellowship — Fuwai Hospital, Beijing &nbsp;|&nbsp; FHRS</p>
-    <p class="hero-desc">Subspecialty-trained cardiac electrophysiologist with expertise in complex arrhythmia ablation, conduction system pacing, and device therapy. Practising at Holy Family Hospital, Mumbai &amp; Omega Hospital, Mangalore.</p>
+    <p class="hero-desc">Subspecialty-trained cardiac electrophysiologist with expertise in complex arrhythmia ablation, conduction system pacing, and device therapy. Practising at Holy Family Hospital, Mumbai &amp; Mangalore Heartscan Foundation, Mangalore.</p>
     <div class="hero-stats">
       <div><span class="stat-num">6+</span><span class="stat-label">Years EP Practice</span></div>
       <div><span class="stat-num">9</span><span class="stat-label">Publications &amp; Presentations</span></div>
@@ -159,14 +163,15 @@
       <div class="card-name">Dr. Yajnik Kumble</div>
       <div class="card-title">Consultant Cardiac Electrophysiologist</div>
       <div class="card-info">
-        <div class="card-info-item"><div class="icon">🏥</div><div><strong>Holy Family Hospital &amp; Research Centre</strong><span>Bandra West, Mumbai — Mon &amp; Fri, 4–6 PM</span></div></div>
-        <div class="card-info-item"><div class="icon">🏥</div><div><strong>Mangalore Heartscan Foundation</strong><span>Bendoor, Mangalore</span></div></div>
+        <div class="card-info-item"><div class="icon">🏥</div><div><strong>Holy Family Hospital &amp; Research Centre</strong><span>Bandra West, Mumbai — 1st &amp; 3rd Fri &amp; Sat, 4–7 PM</span></div></div>
+        <div class="card-info-item"><div class="icon">🏥</div><div><strong>Mangalore Heartscan Foundation</strong><span>Bendoor, Mangalore — Mon–Fri, 4–7 PM</span></div></div>
         <div class="card-info-item"><div class="icon">🎓</div><div><strong>Fuwai Hospital, Beijing</strong><span>Advanced EP Fellowship</span></div></div>
         <div class="card-info-item"><div class="icon">📞</div><div><strong>9845383138 / 9321100499</strong><span>yagnik22@gmail.com</span></div></div>
       </div>
     </div>
   </div>
-</section><section class="about" id="about">
+</section>
+<section class="about" id="about">
   <div class="reveal">
     <div class="section-label">Background</div>
     <h2 class="section-title">Trained at the <em>highest level</em><br/>of electrophysiology</h2>
@@ -218,7 +223,8 @@
     <div class="pub-item"><div class="pub-num">07</div><div class="pub-content"><div class="pub-type">Conference Presentation</div><h4>Outflow tract ventricular tachycardia</h4><p class="pub-journal">EP Fellows Summit 2023</p></div></div>
     <div class="pub-item"><div class="pub-num">08</div><div class="pub-content"><div class="pub-type">Conference Presentation</div><h4>Two routes of entry into coronary sinus during CRT implant</h4><p class="pub-journal">IHRSCON 2023</p></div></div>
   </div>
-</section><section class="awards" id="awards">
+</section>
+<section class="awards" id="awards">
   <div class="reveal">
     <div class="section-label">Recognition</div>
     <h2 class="section-title">Awards &amp; <em>Achievements</em></h2>
@@ -239,7 +245,7 @@
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What conditions does Dr. Kumble treat? <span class="toggle">+</span></div><div class="faq-a">Dr. Kumble treats the full spectrum of heart rhythm disorders including atrial fibrillation, SVT, ventricular tachycardia, heart block, and inherited conditions such as Brugada syndrome and long QT syndrome. He also manages patients requiring pacemakers, ICDs, and cardiac resynchronisation devices.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is a cardiac electrophysiologist? <span class="toggle">+</span></div><div class="faq-a">A cardiac electrophysiologist is a cardiologist with additional subspecialty training in the electrical system of the heart. EPs diagnose and treat arrhythmias using catheter ablation, implantable devices, and electrophysiology studies.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is catheter ablation and is it safe? <span class="toggle">+</span></div><div class="faq-a">Catheter ablation is a minimally invasive procedure where thin flexible wires are guided to the heart to identify and eliminate the source of an abnormal rhythm. It is well-established with high success rates and a strong safety profile.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Where can I consult Dr. Kumble? <span class="toggle">+</span></div><div class="faq-a">Dr. Kumble consults at Holy Family Hospital and Research Centre, Bandra West, Mumbai (Monday &amp; Friday, 4–6 PM) and at Mangalore Heartscan Foundation, Bendoor, Mangalore. Please call 9845383138 or 9321100499 to book an appointment.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Where can I consult Dr. Kumble? <span class="toggle">+</span></div><div class="faq-a">Dr. Kumble consults at Holy Family Hospital and Research Centre, Bandra West, Mumbai (1st &amp; 3rd Friday &amp; Saturday of every month, 4–7 PM) and at Mangalore Heartscan Foundation, Bendoor, Mangalore (Monday to Friday, 4–7 PM). Please call 9845383138 or 9321100499 to book an appointment.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I need a referral to see Dr. Kumble? <span class="toggle">+</span></div><div class="faq-a">A referral is not strictly required. You are welcome to contact the hospital directly to schedule a consultation.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What should I bring to my first consultation? <span class="toggle">+</span></div><div class="faq-a">Please bring any previous ECGs, Holter monitor reports, echocardiograms, and a list of your current medications. If you have had prior cardiac procedures or device implants, bring the relevant reports and device ID cards.</div></div>
   </div>
@@ -251,33 +257,88 @@
   </div>
   <div class="contact-grid reveal">
     <div class="contact-info">
-      <div class="contact-item"><div class="contact-icon">🏥</div><div><div class="contact-label">Mumbai</div><div class="contact-value">Holy Family Hospital &amp; Research Centre<br/>Bandra West, Mumbai<br/>Monday &amp; Friday, 4–6 PM</div></div></div>
-      <div class="contact-item"><div class="contact-icon">🏥</div><div><div class="contact-label">Mangalore</div><div class="contact-value">Mangalore Heartscan Foundation<br/>Bendoor, Mangalore</div></div></div>
+      <div class="contact-item"><div class="contact-icon">🏥</div><div><div class="contact-label">Mumbai</div><div class="contact-value">Holy Family Hospital &amp; Research Centre<br/>Bandra West, Mumbai<br/>1st &amp; 3rd Friday &amp; Saturday of every month, 4–7 PM</div></div></div>
+      <div class="contact-item"><div class="contact-icon">🏥</div><div><div class="contact-label">Mangalore</div><div class="contact-value">Mangalore Heartscan Foundation<br/>Bendoor, Mangalore<br/>Monday to Friday, 4–7 PM</div></div></div>
       <div class="contact-item"><div class="contact-icon">📞</div><div><div class="contact-label">Phone</div><div class="contact-value"><a href="tel:9845383138">9845383138</a> / <a href="tel:9321100499">9321100499</a></div></div></div>
       <div class="contact-item"><div class="contact-icon">✉️</div><div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:yagnik22@gmail.com">yagnik22@gmail.com</a></div></div></div>
     </div>
     <div class="contact-form">
       <div class="form-row">
-        <div class="form-group"><label>First Name</label><input type="text" placeholder="Your name"/></div>
-        <div class="form-group"><label>Phone</label><input type="tel" placeholder="Your number"/></div>
+        <div class="form-group"><label for="cf-name">First Name</label><input id="cf-name" name="name" type="text" placeholder="Your name" required/></div>
+        <div class="form-group"><label for="cf-phone">Phone</label><input id="cf-phone" name="phone" type="tel" placeholder="Your number"/></div>
       </div>
-      <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"/></div>
-      <div class="form-group"><label>Reason for Consultation</label><input type="text" placeholder="e.g. Palpitations, AF, Device follow-up"/></div>
-      <div class="form-group"><label>Preferred Location</label><select><option>Mumbai — Holy Family Hospital</option><option>Mangalore — Heartscan Foundation</option></select></div>
-      <div class="form-group"><label>Message (optional)</label><textarea placeholder="Any additional details..."></textarea></div>
-      <button class="submit-btn">Send Enquiry</button>
+      <div class="form-group"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" placeholder="your@email.com" required/></div>
+      <div class="form-group"><label for="cf-reason">Reason for Consultation</label><input id="cf-reason" name="reason" type="text" placeholder="e.g. Palpitations, AF, Device follow-up"/></div>
+      <div class="form-group"><label for="cf-location">Preferred Location</label>
+        <select id="cf-location" name="preferred_location">
+          <option>Mumbai — Holy Family Hospital</option>
+          <option>Mangalore — Heartscan Foundation</option>
+        </select>
+      </div>
+      <div class="form-group"><label for="cf-message">Message (optional)</label><textarea id="cf-message" name="message" placeholder="Any additional details..."></textarea></div>
+      <button class="submit-btn" id="submit-btn" type="button" onclick="submitForm()">Send Enquiry</button>
+      <div class="form-status" id="form-status"></div>
     </div>
   </div>
 </section>
 <footer>
   <div class="footer-name">Dr. Yajnik Mukund Kumble</div>
-  <div class="footer-copy">Consultant Cardiac Electrophysiologist &nbsp;|&nbsp; Mumbai &amp; Mangalore &nbsp;|&nbsp; © 2025</div>
+  <div class="footer-copy">Consultant Cardiac Electrophysiologist &nbsp;|&nbsp; Mumbai &amp; Mangalore &nbsp;|&nbsp; © 2026</div>
 </footer>
 <script>
-  const reveals=document.querySelectorAll('.reveal');
-  const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});},{threshold:0.1});
-  reveals.forEach(r=>observer.observe(r));
-  function toggleFaq(el){const a=el.nextElementSibling;a.classList.toggle('open');el.classList.toggle('open');}
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+
+  function toggleFaq(el) {
+    const a = el.nextElementSibling;
+    a.classList.toggle('open');
+    el.classList.toggle('open');
+  }
+
+  async function submitForm() {
+    const btn = document.getElementById('submit-btn');
+    const status = document.getElementById('form-status');
+    const name = document.getElementById('cf-name').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    const phone = document.getElementById('cf-phone').value.trim();
+    const reason = document.getElementById('cf-reason').value.trim();
+    const location = document.getElementById('cf-location').value;
+    const message = document.getElementById('cf-message').value.trim();
+
+    if (!name || !email) {
+      status.className = 'form-status error';
+      status.textContent = 'Please fill in your name and email before submitting.';
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    status.className = 'form-status';
+    try {
+      const res = await fetch('https://formspree.io/f/xkoqozok', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ name, email, phone, reason, preferred_location: location, message })
+      });
+      if (res.ok) {
+        status.className = 'form-status success';
+        status.textContent = "Your enquiry has been sent. Dr. Kumble's team will be in touch shortly.";
+        ['cf-name','cf-phone','cf-email','cf-reason','cf-message'].forEach(id => {
+          document.getElementById(id).value = '';
+        });
+        btn.textContent = 'Sent ✓';
+      } else {
+        throw new Error('Server error');
+      }
+    } catch {
+      status.className = 'form-status error';
+      status.textContent = 'Something went wrong. Please try calling or emailing directly.';
+      btn.disabled = false;
+      btn.textContent = 'Send Enquiry';
+    }
+  }
 </script>
 </body>
 </html>
